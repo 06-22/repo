@@ -1,0 +1,84 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f0f2f5; /* A neutral background to showcase the component */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* CSS from section:sidebar-menu */
+.sidebar-container {
+    padding: 2rem;
+    display: flex;
+    /* On larger screens, the menu will be aligned to the start. */
+    justify-content: flex-start;
+  }
+
+  .sidebar-nav {
+    background-color: #fde894; /* from style_1 */
+    max-width: 171px; /* from Figma frame width */
+    width: 100%;
+    height: 594px; /* from Figma frame height */
+    padding-top: 40px; /* from y-coordinate of the first element */
+    padding-left: 22px; /* from difference in x-coordinates: -176 - (-198) = 22 */
+    overflow: hidden; /* from style_1 */
+  }
+
+  .nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-item {
+    /* The vertical spacing is derived from the y-coordinates of the Figma nodes.
+       The distance from the top of one element to the top of the next is consistently ~56px.
+       We set a fixed height for each item to enforce this rhythm. */
+    height: 56px;
+    display: flex;
+    align-items: flex-start; /* Align text to the top of the allocated space */
+  }
+  
+  /* The last item's next logical position is at y=263, a 55px difference from the previous. */
+  .nav-item:nth-child(4) {
+      height: 55px;
+  }
+  
+  /* The last item doesn't need a height as nothing follows it. */
+  .nav-item:last-child {
+      height: auto;
+  }
+
+  .nav-link {
+    color: #000000; /* from style_2 */
+    font-size: 16px; /* from style_2 */
+    font-weight: 400; /* from style_2 */
+    line-height: 19.36px; /* from style_2 */
+    text-decoration: none;
+    text-align: left; /* from style_2 */
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  .nav-link:hover {
+    opacity: 0.7;
+  }
+
+  @media (max-width: 768px) {
+    .sidebar-container {
+      justify-content: center; /* Center the menu on smaller screens */
+      padding: 1rem;
+    }
+    .sidebar-nav {
+      height: auto; /* Allow height to be flexible on mobile */
+      padding-bottom: 40px;
+    }
+  }
