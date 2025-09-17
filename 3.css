@@ -1,0 +1,109 @@
+:root {
+    --text-color: #000000;
+    --background-color: #ffffff;
+    --icon-color: #d9d9d9;
+    --page-max-width: 420px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f0f0;
+}
+
+.section-container {
+    max-width: var(--page-max-width);
+    margin: 0 auto;
+    background-color: var(--background-color);
+    box-sizing: border-box;
+}
+
+@media (max-width: 420px) {
+    .section-container {
+        max-width: 100%;
+    }
+}
+
+/* CSS from section:header */
+#section-header {
+    padding: 12px 15px 0;
+}
+
+.main-header {
+    width: 100%;
+    display: flex;
+}
+
+.menu-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.menu-bar {
+    display: block;
+    width: 34px;
+    height: 7px;
+    background-color: var(--icon-color);
+    border-radius: 2px;
+}
+
+/* CSS from section:article */
+#section-article {
+    padding-top: 113px;
+    padding-bottom: 250px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.event-showcase {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 21px;
+}
+
+.event-showcase img {
+    display: block;
+    width: 320px;
+    height: 145px;
+    object-fit: cover;
+    max-width: 100%;
+}
+
+.event-caption {
+    color: var(--text-color);
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.21;
+    text-align: center;
+    max-width: 192px;
+}
+
+@media (max-width: 420px) {
+    #section-article {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .event-showcase img {
+        height: auto;
+    }
+    
+    .event-caption {
+        max-width: 90%;
+    }
+}
